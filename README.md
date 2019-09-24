@@ -9,3 +9,8 @@ It was pretty easy. Also, I have learnt new tool to write React Native
 which help me a lot to testing my application.
 
 [link to video](https://youtu.be/phzYuXEZ1DE )
+
+
+Exercise 09 - ready 100%
+------------------------
+
