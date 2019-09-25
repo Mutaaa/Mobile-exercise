@@ -10,6 +10,10 @@ which help me a lot to testing my application.
 
 [link to video](https://youtu.be/phzYuXEZ1DE )
 
+Exercise 02 - ready 100%
+------------------------
+
+[link to video](https://youtu.be/TsQfvsPI680 )
 
 Exercise 09 - ready 100%
 ------------------------
