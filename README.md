@@ -12,9 +12,14 @@ which help me a lot to testing my application.
 
 Exercise 02 - ready 100%
 ------------------------
+In this exercise, I learnt a lot on React native components. I understand how it coming.
+
+I have problem with some of your material. I think is because of some updated. I can fixed it by searching it on google. 
 
 [link to video](https://youtu.be/TsQfvsPI680 )
 
 Exercise 09 - ready 100%
 ------------------------
+In this exercise, I learnt basic of progessive web application and new tools. 
 
+[link to video](https://youtu.be/ngw7F7aWt_k )
