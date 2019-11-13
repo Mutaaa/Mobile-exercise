@@ -24,11 +24,15 @@ From tutorial "import Font from 'expo';" not working but I fixed it by "import *
 
 [link to video](https://youtu.be/dTyQfO1AAR0 )
 
-Exercise 05 - ready 60%
+Exercise 05 - ready 100%
 ------------------------
 In this exercise, I learnt how to use API from open weather and how to get the location from user.
 - The location is work, I can get latitude and longitude from user but I still have problem with API now. 
 It always said my account was block from open weather API. I will figure it out why.
+- The last problem fixed, I should not call funtion in render because it make API blocked me.
+- Sometime, I still got problem with RCNGeolocation. I needed to add it manually in XCode then it work. 
+
+[link to video](https://youtu.be/yeVHQ2nPcmo )
 
 Exercise 06 - ready 0%
 ------------------------

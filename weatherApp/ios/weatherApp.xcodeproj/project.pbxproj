@@ -33,6 +33,9 @@
 		B2D2B97B027E4C25B4470714 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47C0323EECCE4F90BBB1773A /* MaterialIcons.ttf */; };
 		C22D1374237C596100E28CBF /* RNCGeolocation.xcworkspace in Frameworks */ = {isa = PBXBuildFile; fileRef = C22D1372237C54A000E28CBF /* RNCGeolocation.xcworkspace */; };
 		C23FBACD0DC841CE8AA224E3 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BF7BBA87D8744C58AE4C442 /* EvilIcons.ttf */; };
+		C28B8A49237C8B0B002353DB /* RNCGeolocation.xcodeproj in Frameworks */ = {isa = PBXBuildFile; fileRef = C22D136C237C547200E28CBF /* RNCGeolocation.xcodeproj */; };
+		C28B8A4D237C8B0B002353DB /* RNCGeolocation.h in Frameworks */ = {isa = PBXBuildFile; fileRef = C28B8A4B237C8B0B002353DB /* RNCGeolocation.h */; };
+		C28B8A4E237C8B0B002353DB /* RNCGeolocation.m in Frameworks */ = {isa = PBXBuildFile; fileRef = C28B8A4C237C8B0B002353DB /* RNCGeolocation.m */; };
 		C4621D1432684069B1A5C196 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77E126D463934B8EB6DB9A23 /* Fontisto.ttf */; };
 		CA2CBED653104FF2BC309DB6 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EC63A92A4814140A871B2A3 /* Entypo.ttf */; };
 		EF7F7D900C3746D5B396619E /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DBBADC2F65E7458D9AA8788A /* Octicons.ttf */; };
@@ -102,6 +105,8 @@
 		B516A3B96B974C60B5389CE9 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		C22D136C237C547200E28CBF /* RNCGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCGeolocation.xcodeproj; path = "../node_modules/@react-native-community/geolocation/ios/RNCGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		C22D1372237C54A000E28CBF /* RNCGeolocation.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = RNCGeolocation.xcworkspace; path = "../node_modules/@react-native-community/geolocation/ios/RNCGeolocation.xcworkspace"; sourceTree = "<group>"; };
+		C28B8A4B237C8B0B002353DB /* RNCGeolocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RNCGeolocation.h; path = "../node_modules/@react-native-community/geolocation/ios/RNCGeolocation.h"; sourceTree = "<group>"; };
+		C28B8A4C237C8B0B002353DB /* RNCGeolocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RNCGeolocation.m; path = "../node_modules/@react-native-community/geolocation/ios/RNCGeolocation.m"; sourceTree = "<group>"; };
 		D6F49148AE904C64975A01DD /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		DBBADC2F65E7458D9AA8788A /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		E741BD7D96704B0BAC606910 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
@@ -124,6 +129,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C28B8A4D237C8B0B002353DB /* RNCGeolocation.h in Frameworks */,
+				C28B8A4E237C8B0B002353DB /* RNCGeolocation.m in Frameworks */,
+				C28B8A49237C8B0B002353DB /* RNCGeolocation.xcodeproj in Frameworks */,
 				C22D1374237C596100E28CBF /* RNCGeolocation.xcworkspace in Frameworks */,
 				48CDB18C0266BA98B6AD198E /* libPods-weatherApp.a in Frameworks */,
 			);
@@ -205,6 +213,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C28B8A4B237C8B0B002353DB /* RNCGeolocation.h */,
+				C28B8A4C237C8B0B002353DB /* RNCGeolocation.m */,
 				C22D1372237C54A000E28CBF /* RNCGeolocation.xcworkspace */,
 				C22D136C237C547200E28CBF /* RNCGeolocation.xcodeproj */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,

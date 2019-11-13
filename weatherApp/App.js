@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, TextInput, Button, ScrollView, Keyboard, Image } from 'react-native';
 import { Card, Divider } from 'react-native-elements';
+import { FlatList } from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
+import ForecastCard from './ForecastCard';
 
 class Banner extends React.Component {
   render() {
@@ -24,14 +26,15 @@ export default class App extends Component {
         forecast: [],
         error:'',
         temperature: 0,
-        api: '4d550e19e4b48cf4c90bc7a819dd6aec'
+        api: 'd4692d288ad0d9a49f54f14283640a1d'
     };
   } 
 
   componentDidMount(){
 		// Get the user's location
     this.getLocation();
-    this.getWeather()
+    //this.getWeather()
+    
   }
 
   getLocation(){
@@ -59,25 +62,22 @@ export default class App extends Component {
     .then(data => {
         this.setState((prevState, props) => ({
             forecast: data
-            //temperature: temp
     }));
     })
+    console.log(this.state.latitude)
+    console.log(this.state.longitude)
   }
 
 
   render(){
     //console.log("hello")
     //console.log(this.state.longitude)
+
     
     return (
       <View style={styles.container}>
-        <Banner />
         
-        <Text h1>{this.state.latitude}</Text>
-        <Text h1>{this.state.longitude}</Text>
-        <Text h1>{this.state.temperature}</Text>
-        <Text h1>asfdsfs</Text>
-        
+        <FlatList data={this.state.forecast.list} style={{marginTop:20, background: 'white'}} keyExtractor={item => item.dt_text} renderItem={({item}) => <ForecastCard detail={item} location={this.state.forecast.city.name} />} />
 
       </View>
     )
