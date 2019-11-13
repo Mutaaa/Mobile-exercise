@@ -60,7 +60,7 @@ class ShowsList extends React.Component {
 
     async getShows() {
         // REMEMBER change current date here, or you will get errors!
-        let response = await fetch('https://www.finnkino.fi/xml/Schedule/?area=1015&dt=25.09.2019');
+        let response = await fetch('https://www.finnkino.fi/xml/Schedule/?area=1015&dt=12.11.2019');
         let data = await response.text();
         parseString(data, function (err, result) {
             this.setState({ shows: result.Schedule.Shows[0] });
