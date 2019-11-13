@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View , ScrollView} from 'react-native';
-import * as Font from 'expo';
+import * as Font from 'expo-font';
+
 import { Ionicons } from '@expo/vector-icons';
 import { 
     Body, 
@@ -62,14 +63,140 @@ export default class Main extends React.Component {
     }
 
     render(){
-        if (this.state.loadingCourses){
+        // show courses in picker
+        var courses = this.state.courses.map(function(course,index){
             return (
+                <Picker.Item label={course.name} value={index} key={index} />    
+            )
+        });
+        var scores; 
+
+        // loading scores
+        if (this.state.loadingScores){
+            scores = 
                 <View style={styles.container}>
                     <Spinner color="black"></Spinner>
-                    <Text>Loading courses data, please wait...</Text>
+                    <Text>Loading scores data, please wait...</Text>
                 </View>
-            );
+        } else {
+            scores = this.state.scores.map(function(score, index) {
+                // calc front, add below codes here
+                // calc front
+                var frontScore = 0;
+                var front = score.front.map(function(holeScore, index) {
+                    frontScore += holeScore;
+                    // par, birdie, eagle, bogey or double bogey (or worse)
+                    var scoreText = <Text style={[styles.textCenter, styles.text]}>{holeScore}</Text>;
+                    if (holeScore == this.state.courses[this.state.selectedCourseIndex].holes[index].par - 1) {
+                        scoreText = <Text style={[styles.birdie, styles.text]}>{holeScore}</Text>;
+                    } else if (holeScore == this.state.courses[this.state.selectedCourseIndex].holes[index].par - 2) {
+                        scoreText = <Text style={[styles.eagle, styles.text]}>{holeScore}</Text>;
+                    } else if (holeScore == this.state.courses[this.state.selectedCourseIndex].holes[index].par + 1) {
+                        scoreText = <Text style={[styles.bogey, styles.text]}>{holeScore}</Text>;
+                    } else if (holeScore >= this.state.courses[this.state.selectedCourseIndex].holes[index].par + 2) {
+                        scoreText = <Text style={[styles.doublebogey, styles.text]}>{holeScore}</Text>;
+                    } 
+                    return (
+                        <Col key={index}>
+                            <Text style={[styles.textCenter, styles.text, styles.holeHeaderText]}>{index+1}</Text>
+                            <Text style={[styles.textCenter, styles.text]}>{this.state.courses[this.state.selectedCourseIndex].holes[index].par}</Text>
+                            <Text style={[styles.textCenter, styles.text]}>{this.state.courses[this.state.selectedCourseIndex].holes[index].hcp}</Text>
+                            { scoreText }
+                        </Col>
+                    )
+                }.bind(this));
+                // calc back, add below codes here
+                // calc back
+                var backScore = 0;
+                var back = score.back.map(function(holeScore, index) {
+                    var bIndex = index + 9;
+                    backScore += holeScore;
+                    var scoreText = <Text style={[styles.textCenter, styles.text]}>{holeScore}</Text>;
+                    if (holeScore == this.state.courses[this.state.selectedCourseIndex].holes[bIndex].par - 1) {
+                        scoreText = <Text style={[styles.birdie, styles.text]}>{holeScore}</Text>;
+                    } else if (holeScore == this.state.courses[this.state.selectedCourseIndex].holes[bIndex].par - 2) {
+                        scoreText = <Text style={[styles.eagle, styles.text]}>{holeScore}</Text>;
+                    } else if (holeScore == this.state.courses[this.state.selectedCourseIndex].holes[bIndex].par + 1) {
+                        scoreText = <Text style={[styles.bogey, styles.text]}>{holeScore}</Text>;
+                    } else if (holeScore >= this.state.courses[this.state.selectedCourseIndex].holes[bIndex].par + 2) {
+                        scoreText = <Text style={[styles.doublebogey, styles.text]}>{holeScore}</Text>;
+                    } 
+                    return (
+                        <Col key={index}>
+                            <Text style={[styles.textCenter, styles.text, styles.holeHeaderText]}>{bIndex+1}</Text>
+                            <Text style={[styles.textCenter, styles.text]}>{this.state.courses[this.state.selectedCourseIndex].holes[bIndex].par}</Text>
+                            <Text style={[styles.textCenter, styles.text]}>{this.state.courses[this.state.selectedCourseIndex].holes[bIndex].hcp}</Text>
+                            { scoreText }
+                        </Col>
+                    )
+                }.bind(this));
+
+                // return created card
+                return (
+                    <Card key={index}>
+                        <CardItem header>
+                            <Text>ScoreCard - {score.date} - {score.course}</Text>
+                        </CardItem>
+                        <CardItem>
+                            <Grid>
+                                <Text style={styles.frontBackText}>Front</Text>
+                                <Row style={styles.row}> 
+                                    <Col>
+                                        <Text style={[styles.text, styles.holeHeaderText]}>Hole</Text>
+                                        <Text style={styles.text}>Par</Text>
+                                        <Text style={styles.text}>Hcp</Text>
+                                        <Text style={styles.text}>Score</Text>
+                                    </Col>
+                                    {front}
+                                </Row>
+                                <Text style={styles.frontBackText}>Back</Text>
+                                <Row style={styles.row}> 
+                                    <Col>
+                                        <Text style={[styles.text, styles.holeHeaderText]}>Hole</Text>
+                                        <Text style={styles.text}>Par</Text>
+                                        <Text style={styles.text}>Hcp</Text>
+                                        <Text style={styles.text}>Score</Text>
+                                    </Col>
+                                    {back}
+                                </Row>
+                            </Grid>
+                        </CardItem>
+                        <CardItem footer>
+                            <Text style={styles.text}>Front: {frontScore}, Back: {backScore}, Total: {frontScore+backScore}</Text>
+                        </CardItem>
+                    </Card>       
+                )
+
+
+            }.bind(this)); 
+            
         }
+
+        return (
+            <Container>
+                <Header>
+                    <Body>
+                        <Title>MyGolf</Title>
+                    </Body>
+                </Header>
+                <Content>
+                <Form>
+                    <Picker
+                        mode="dropdown"
+                        iosHeader="Course"
+                        iosIcon={<Icon name="arrow-down" />}
+                        style={{ width: undefined }}
+                        selectedValue={this.state.selectedCourseIndex}
+                        onValueChange={this.onValueChange.bind(this)}>
+                            {courses}
+                    </Picker>
+                </Form>
+                <ScrollView>
+                    {scores}
+                </ScrollView>
+                </Content>
+            </Container>
+        );
         
     }
 
@@ -77,21 +204,55 @@ export default class Main extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-      alignItems:'center',
       flex: 1,
-      margin: 5,
-      justifyContent: 'center'
-    },
-    banner: {
-      backgroundColor: 'cadetblue',
+      backgroundColor: '#fff',
+      alignItems: 'center',
       justifyContent: 'center',
-      marginBottom: 20
     },
-    bannerText: {
-      color: 'white',
-      textAlign: 'center',
-      paddingTop: 20,
-      paddingBottom: 20
+    eagle: {
+        backgroundColor: 'yellow',
+        color: 'black',
+        textAlign: 'center',
+        margin: 2
+    },
+    birdie: {
+        backgroundColor: 'red',
+        color: 'white',
+        textAlign: 'center',
+        margin: 2
+    },
+    par: {
+        backgroundColor: 'green',
+        color: 'white',
+        textAlign: 'center',
+        margin: 2
+    },
+    bogey: {
+        backgroundColor: 'blue',
+        color: 'white',
+        textAlign: 'center',
+        margin: 2
+    },
+    doublebogey: {
+        backgroundColor: 'darkblue',
+        color: 'white',
+        textAlign: 'center',
+        margin: 2
+    },
+    textCenter: {
+        textAlign: 'center'
+    },
+    row: {
+        marginBottom: 10
+    },
+    text: {
+        fontSize: 11
+    },
+    holeHeaderText: {
+        backgroundColor: 'lightgray'
+    },
+    frontBackText: {
+        fontSize: 11,
+        fontWeight: 'bold'
     }
-  
   });

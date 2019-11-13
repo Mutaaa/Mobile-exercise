@@ -18,6 +18,23 @@ I have problem with some of your material. I think is because of some updated. I
 
 [link to video](https://youtu.be/TsQfvsPI680 )
 
+Exercise 04 - ready 100%
+------------------------
+In this exercise, I learnt how to use axios and native base.
+
+From tutorial "import Font from 'expo';" not working but I fixed it by "import * as Font from 'expo-font';" instead.
+
+[link to video](https://youtu.be/dTyQfO1AAR0 )
+
+Exercise 05 - ready 60%
+------------------------
+In this exercise, I learnt how to use API from open weather and how to get the location from user.
+
+- The location is work, I can get latitude and longitude from user but I still have problem with API now. 
+
+It always said my account was block from open weather API. I will figure it out why.
+
+
 Exercise 09 - ready 100%
 ------------------------
 In this exercise, I learnt basic of progessive web application and new tools. 
