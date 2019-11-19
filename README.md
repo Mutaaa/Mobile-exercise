@@ -34,7 +34,7 @@ It always said my account was block from open weather API. I will figure it out 
 
 [link to video](https://youtu.be/yeVHQ2nPcmo )
 
-Exercise 06 - ready 0%
+Exercise 06 - ready 40%
 ------------------------
 
 Exercise 07 - ready 0%
