@@ -17,6 +17,9 @@ I have problem with some of your material. I think is because of some updated. I
 
 [link to video](https://youtu.be/TsQfvsPI680 )
 
+Exercise 03 - ready 0%
+------------------------
+
 Exercise 04 - ready 100%
 ------------------------
 In this exercise, I learnt how to use axios and native base.
