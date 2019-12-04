@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MapView from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-
+import { Marker } from 'react-native-maps';
 import * as Font from 'expo-font';
 import { Container, Header, Button, Icon, Fab } from 'native-base';
 import { Content, Form, Item, Input } from 'native-base';
@@ -10,46 +10,112 @@ import {
     Image,
 } from "react-native";
 import { Dialog, ProgressDialog, ConfirmDialog } from "react-native-simple-dialogs";
-import DialogInput from 'react-native-dialog-input';
+import Geocoder from 'react-native-geocoder';
+import { TextInput } from 'react-native-paper';
+import { AsyncStorage } from 'react-native';
 
 export default class App extends React.Component {
+  
   constructor(props) {
     super(props)
     this.state = {
       active: false,
-      isAlertVisible:false,
+      dialogVisible:false,
+      citydata: '',
+      textdata: '',
+      citylist: '',
     };
   }
 
-  submit(inputText){
-    console.log(inputText);
-    this.setState({isAlertVisible:false})
-  }
+  saveValueFunction = () => {
+    //function to save the value in AsyncStorage
+    if (this.state.citydata && this.state.textdata) {
+      //To check the input not empty
+      AsyncStorage.setItem(this.state.citydata, this.state.textdata);
+      //Setting a data to a AsyncStorage with respect to a key
+      this.setState({ citydata: '' });
+      this.setState({ textdata: '' });
+      //Resetting the TextInput
+      alert('Data Saved');
+
+      //console.log(this.state.citydata)
+
+      AsyncStorage.getAllKeys().then((keys) => {
+        return AsyncStorage.multiGet(keys)
+          .then((result) => {
+            //console.log(result);
+            this.state.citylist = result
+            console.log(this.state.citylist);
+
+            
+          }).catch((e) =>{
+            console.log(e);
+          });
+      });
+
+      
+
+    } else {
+      alert('Please fill data');
+      //alert for the empty InputText
+    }
+  };
+  
 
 
   render() {
     return (
       <View style={styles.container}>
-        <MapView style={styles.mapStyle} />
+        <MapView style={styles.mapStyle} >
+        <MapView.Marker
+          coordinate={{latitude: 37.73538,
+              longitude: -122.4324,}}
+          title={"marker.title"}
+          description={"desss"}
+        />
+        </MapView>
 
         <Fab
             active={this.state.active}
             direction="up"
             style={{ backgroundColor: '#5067FF' }}
             position="bottomRight"
-            onPress={ () => this.setState({isAlertVisible:true}) }>
+            onPress={ () => this.setState({dialogVisible:true}) }>
             <Icon name="share" />
             
           </Fab>
 
-          <DialogInput isDialogVisible={this.state.isAlertVisible}
-                     title={"Add a new MyPlace"}
-                     message={"City"}
-                     hintInput ={"enter city name"}
-                     submitInput={ (inputText) => {this.submit(inputText)} }
-                     closeDialog={ () =>this.setState({isAlertVisible:false})}
-                     submitText={"Save"}>
-          </DialogInput>
+          <Dialog
+            visible={this.state.dialogVisible}
+            title="Add a new my place"
+            onTouchOutside={() => this.setState({dialogVisible: false})} >
+            <View>
+              <TextInput
+                label='City'
+                value={this.state.citydata}
+                onChangeText={data => this.setState({ citydata:data })}
+              />
+              <TextInput
+                label='Text'
+                value={this.state.textdata}
+                onChangeText={data => this.setState({ textdata:data })}
+              />
+
+              <Text> </Text>
+
+              <Button full light 
+                onPress={this.saveValueFunction}>
+                <Text>Save</Text>
+              </Button>
+
+              <Text> </Text>
+
+              <Button full light
+                onPress={() => this.setState({dialogVisible: false})}>
+                <Text>Cancel</Text>
+              </Button>
+            </View>
+        </Dialog>
 
       </View>
     );
