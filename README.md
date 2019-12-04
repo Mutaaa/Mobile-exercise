@@ -37,8 +37,9 @@ It always said my account was block from open weather API. I will figure it out 
 
 [link to video](https://youtu.be/yeVHQ2nPcmo )
 
-Exercise 06 - ready 40%
+Exercise 06 - ready 70%
 ------------------------
+I have a problem of how to converse to address to lat and long 
 
 Exercise 07 - ready 0%
 ------------------------
