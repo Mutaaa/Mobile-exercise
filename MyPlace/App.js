@@ -23,29 +23,56 @@ export default class App extends React.Component {
       dialogVisible:false,
       citydata: '',
       textdata: '',
-      citylist: '',
+      lat: '',
+      lng: '',
+      location: []
     };
   }
+  
 
   saveValueFunction = () => {
     //function to save the value in AsyncStorage
     if (this.state.citydata && this.state.textdata) {
       //To check the input not empty
-      AsyncStorage.setItem(this.state.citydata, this.state.textdata);
+
+      //console.log(this.state.citydata);
+
+      // Construct the API url to call
+      let url = 'https://nominatim.openstreetmap.org/search?city='+this.state.citydata+'&format=json';
+
+      fetch(url)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        //console.log(responseJson);
+        //console.log(responseJson[0].lat);
+        this.setState({
+          lat: responseJson[0].lat,
+          lng: responseJson[0].lon
+        }, function(){
+
+        });
+        //console.log(this.state.lng)
+      })
+      .catch((error) =>{
+        console.error(error);
+      });    
+
+      console.log(this.state.location)
+      //AsyncStorage.setItem(this.state.textdata, );
       //Setting a data to a AsyncStorage with respect to a key
+
       this.setState({ citydata: '' });
       this.setState({ textdata: '' });
       //Resetting the TextInput
       alert('Data Saved');
 
-      //console.log(this.state.citydata)
 
       AsyncStorage.getAllKeys().then((keys) => {
         return AsyncStorage.multiGet(keys)
           .then((result) => {
-            //console.log(result);
-            this.state.citylist = result
-            console.log(this.state.citylist);
+            console.log(result);
+            //this.state.citylist = result
+            //console.log(this.state.citylist);
 
             
           }).catch((e) =>{
@@ -53,16 +80,12 @@ export default class App extends React.Component {
           });
       });
 
-      
-
     } else {
       alert('Please fill data');
       //alert for the empty InputText
     }
   };
   
-
-
   render() {
     return (
       <View style={styles.container}>

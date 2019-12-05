@@ -37,9 +37,9 @@ It always said my account was block from open weather API. I will figure it out 
 
 [link to video](https://youtu.be/yeVHQ2nPcmo )
 
-Exercise 06 - ready 70%
+Exercise 06 - ready 85%
 ------------------------
-Almost done, I get the JSONArray, I can read the data but I have a problem of how to converse address to get latitude and longitude
+Almost done, I get the latitude and longitude already from API but not working with marker yet
 
 Exercise 07 - ready 100%
 ------------------------
