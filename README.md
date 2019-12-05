@@ -39,10 +39,12 @@ It always said my account was block from open weather API. I will figure it out 
 
 Exercise 06 - ready 70%
 ------------------------
-I have a problem of how to converse to address to lat and long 
+Almost done, I get the JSONArray, I can read the data but I have a problem of how to converse address to get latitude and longitude
 
-Exercise 07 - ready 0%
+Exercise 07 - ready 100%
 ------------------------
+In this exercise, I learnt new technology which name is Qt. It's a powerful tool to make cross-platform application.
+[link to screenshot](https://gitlab.labranet.jamk.fi/N3570/mobile-exercises/blob/master/accelBubble/Screenshot.png)
 
 Exercise 08 - ready 0%
 ------------------------
