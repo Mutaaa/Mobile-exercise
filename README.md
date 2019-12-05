@@ -61,5 +61,5 @@ Exercise 10 - ready 0%
 Exercise 11 - ready 0%
 ------------------------
 
-Exercise 12 - ready 0%
+Exercise 12 - Self feedback
 ------------------------
