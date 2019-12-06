@@ -8,14 +8,14 @@ In this exercise, I learnt how to created simple app from React Native which is 
 It was pretty easy. Also, I have learnt new tool to write React Native 
 which help me a lot to testing my application.
 
-[link to video](https://youtu.be/phzYuXEZ1DE )
+[link to video](https://youtu.be/phzYuXEZ1DE)
 
 Exercise 02 - ready 100%
 ------------------------
 In this exercise, I learnt a lot on React native components. I understand how it coming.
 I have problem with some of your material. I think is because of some updated. I can fixed it by searching it on google. 
 
-[link to video](https://youtu.be/TsQfvsPI680 )
+[link to video](https://youtu.be/TsQfvsPI680)
 
 Exercise 03 - ready 0%
 ------------------------
@@ -25,7 +25,7 @@ Exercise 04 - ready 100%
 In this exercise, I learnt how to use axios and native base.
 From tutorial "import Font from 'expo';" not working but I fixed it by "import * as Font from 'expo-font';" instead.
 
-[link to video](https://youtu.be/dTyQfO1AAR0 )
+[link to video](https://youtu.be/dTyQfO1AAR0)
 
 Exercise 05 - ready 100%
 ------------------------
@@ -35,7 +35,7 @@ It always said my account was block from open weather API. I will figure it out 
 - The last problem fixed, I should not call funtion in render because it make API blocked me.
 - Sometime, I still got problem with RCNGeolocation. I needed to add it manually in XCode then it work. 
 
-[link to video](https://youtu.be/yeVHQ2nPcmo )
+[link to video](https://youtu.be/yeVHQ2nPcmo)
 
 Exercise 06 - ready 85%
 ------------------------
@@ -53,7 +53,7 @@ Exercise 09 - ready 100%
 ------------------------
 In this exercise, I learnt basic of progessive web application and new tools. 
 
-[link to video](https://youtu.be/ngw7F7aWt_k )
+[link to video](https://youtu.be/2mrQbalMXaE)
 
 Exercise 10 - ready 100%
 ------------------------
