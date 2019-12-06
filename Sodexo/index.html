@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sodexo">
+    <meta name="theme-color" content="#685f85"/>
+    <link rel="icon" href="data:,">
+    <title>Sodexo</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body onload="fetch()">
+    <div id="container">
+      <h2 id="header">Sodexo</h1>
+      <h4>Lounas</h2>
+      <h4 id="date">2019-12-05</h2>
+      <p id="Text"></p>
+      <!-- <div id="example-table"></div> -->
+      <p id="showData"></p>
+    </div>
+
+    <script>
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('./serviceworker.js')
+            .then(function() {
+              console.log('Service Worker Registered');
+            });
+        }
+    </script>
+
+    <script>
+    function fetch() {
+
+      if (!navigator.onLine) {
+        // you should visualize this better/nicer
+        alert("Device is offline!");
+      }
+      console.log("test");
+      var url = 'https://www.sodexo.fi/ruokalistat/output/daily_json/127/2019-12-05';
+
+      $.getJSON(url, function(data) {
+        
+        // var text = `Date: ${data.date}<br>
+        //             Time: ${data.time}<br>
+        //             Unix time: ${data.milliseconds_since_epoch}`
+        var text = 'price: ${data.courses[1].price}'
+        console.log(data);
+        console.log(data.courses[1].price);
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        console.log(date);
+        
+        var header = data.meta.ref_title;
+        var test = data.courses[1].price;
+                           
+        //$(".Text").html(text);
+        //document.getElementById("Text").innerHTML = test;
+        document.getElementById("header").innerHTML = header;
+        //document.getElementById("date").innerHTML = date;
+        console.log(Object.keys(data.courses).length);
+
+        for (var i = 1; i < Object.keys(data.courses).length; i++) {
+          console.log(data.courses[i]);
+          var div = document.createElement('div');
+          div.setAttribute('class', 'row'); 
+          div.innerHTML = "<div class=\"col-sm\"> <b>" + data.courses[i].category + "</b><br>"+
+          data.courses[i].title_fi +" "+ data.courses[i].properties + "</div>"
+          +"<div class=\"col-sm\">" + data.courses[i].price + "</div>";
+          
+          // Append the div to the body
+          document.body.appendChild(div);
+        }
+
+
+      });
+    }
+
+    </script>
+  </body>
+
+
+</html>
