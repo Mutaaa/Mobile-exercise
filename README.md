@@ -55,8 +55,12 @@ In this exercise, I learnt basic of progessive web application and new tools.
 
 [link to video](https://youtu.be/ngw7F7aWt_k )
 
-Exercise 10 - ready 0%
+Exercise 10 - ready 100%
 ------------------------
+In this exercise, I learnt how to fetch Json and bind data dynamically by JSON. 
+
+[link to video](https://gitlab.labranet.jamk.fi/N3570/mobile-exercises/raw/37bfb034ba274badbfc9712cadb2a34e8bfa636e/Sodexo/Screenshot.png)
+
 
 Exercise 11 - ready 0%
 ------------------------
