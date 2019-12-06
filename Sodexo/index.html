@@ -40,7 +40,9 @@
         alert("Device is offline!");
       }
       console.log("test");
-      var url = 'https://www.sodexo.fi/ruokalistat/output/daily_json/127/2019-12-05';
+      var today = new Date();
+      var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      var url = 'https://www.sodexo.fi/ruokalistat/output/daily_json/127/'+date;
 
       $.getJSON(url, function(data) {
         
@@ -50,8 +52,7 @@
         var text = 'price: ${data.courses[1].price}'
         console.log(data);
         console.log(data.courses[1].price);
-        var today = new Date();
-        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
         console.log(date);
         
         var header = data.meta.ref_title;
@@ -60,7 +61,7 @@
         //$(".Text").html(text);
         //document.getElementById("Text").innerHTML = test;
         document.getElementById("header").innerHTML = header;
-        //document.getElementById("date").innerHTML = date;
+        document.getElementById("date").innerHTML = date;
         console.log(Object.keys(data.courses).length);
 
         for (var i = 1; i < Object.keys(data.courses).length; i++) {
