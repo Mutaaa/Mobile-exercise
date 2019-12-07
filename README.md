@@ -62,8 +62,11 @@ In this exercise, I learnt how to fetch Json and bind data dynamically by JSON.
 [link to video](https://gitlab.labranet.jamk.fi/N3570/mobile-exercises/raw/37bfb034ba274badbfc9712cadb2a34e8bfa636e/Sodexo/Screenshot.png)
 
 
-Exercise 11 - ready 0%
+Exercise 11 - ready 100%
 ------------------------
+In this exercise, I learnt how to use Admob and I also learnt more about state because of reward counted
+
+[link to video](https://youtu.be/WS3HsuI0XQI)
 
 Exercise 12 - Self feedback
 ------------------------
