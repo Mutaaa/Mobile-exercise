@@ -43,7 +43,7 @@ It always said my account was block from open weather API. I will figure it out 
 
 Exercise 06 - ready 85%
 ------------------------
-Almost done, I get the latitude and longitude already from API but not working with marker yet
+Almost done, I get the latitude and longitude already from API but not working with marker yet.
 
 Exercise 07 - ready 100%
 ------------------------
@@ -74,3 +74,16 @@ In this exercise, I learnt how to use Admob and I also learnt more about state b
 
 Exercise 12 - Self feedback
 ------------------------
+How you feel the content of the course (overall)?
+How you feel the course web site and materials in Labranet GitLab?
+Is the material suitable for a contact/virtual study? If not, what should be improved?
+How about workload (low, ok, too much)?
+How about evaluation (exercises and research assignment)?
+Give a rating number from 1-5 (5 == excellent) to this course at overal
+Something else you want to say about course...
+
+I feel good about the content of the course. For me, the material in Labranet is quite good. The workload was not too much. It's ok. 
+I would give myself as 4 because I never learnt these technologies. 
+I have learnt a lot from this course but I cannot complete exercise 6 which I stuck with that problem.
+(Will change later if I can figure it out)
+
