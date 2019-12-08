@@ -17,8 +17,10 @@ I have problem with some of your material. I think is because of some updated. I
 
 [link to video](https://youtu.be/TsQfvsPI680)
 
-Exercise 03 - ready 0%
+Exercise 03 - ready 100%
 ------------------------
+In this exercise, I was trying to get the youtube video location from Finkino XML but I cannot then I use Youtube API V3 instead to search the trailer video.
+Showing the youtube player, I use "react-native-youtube".
 
 Exercise 04 - ready 100%
 ------------------------
