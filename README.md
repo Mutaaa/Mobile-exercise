@@ -22,6 +22,8 @@ Exercise 03 - ready 100%
 In this exercise, I was trying to get the youtube video location from Finkino XML but I cannot then I use Youtube API V3 instead to search the trailer video.
 Showing the youtube player, I use "react-native-youtube".
 
+[link to video](https://youtu.be/x8spwXCWuaM)
+
 Exercise 04 - ready 100%
 ------------------------
 In this exercise, I learnt how to use axios and native base.
