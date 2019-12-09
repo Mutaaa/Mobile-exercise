@@ -41,13 +41,17 @@ It always said my account was block from open weather API. I will figure it out 
 
 [link to video](https://youtu.be/yeVHQ2nPcmo)
 
-Exercise 06 - ready 85%
+Exercise 06 - ready 100%
 ------------------------
-Almost done, I get the latitude and longitude already from API but not working with marker yet.
+In this exercise, I use API from https://nominatim.openstreetmap.org/ to search for latitude and longitude.
+It is the hardest exercise in this course but It make me understand more about react native and expo.
+
+[link to video](https://youtu.be/OL8L_VKDvb8)
 
 Exercise 07 - ready 100%
 ------------------------
 In this exercise, I learnt new technology which name is Qt. It's a powerful tool to make cross-platform application.
+
 [link to screenshot](https://gitlab.labranet.jamk.fi/N3570/mobile-exercises/blob/master/accelBubble/Screenshot.png)
 
 Exercise 08 - ready 0%
@@ -82,8 +86,5 @@ How about evaluation (exercises and research assignment)?
 Give a rating number from 1-5 (5 == excellent) to this course at overal
 Something else you want to say about course...
 
-I feel good about the content of the course. For me, the material in Labranet is quite good. The workload was not too much. It's ok. 
-I would give myself as 4 because I never learnt these technologies. 
-I have learnt a lot from this course but I cannot complete exercise 6 which I stuck with that problem.
-(Will change later if I can figure it out)
-
+I feel good about the content of the course. For me, the material in Labranet is quite good. The work load was not too much. It's ok. 
+I would give myself as 5 because I have learnt so far from these exercise.
